@@ -1,0 +1,7 @@
+module Events
+  def self.subscriptions
+    [
+      Handlers::UpdateVoteCount.subscriptions
+    ].reduce(&:merge)
+  end
+end

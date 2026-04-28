@@ -1,0 +1,25 @@
+<h1>Events</h1>
+
+<% @events.each do |event| %>
+  <div style="border:1px solid #ccc; padding:10px; margin:10px;">
+    
+    <h3><%= event.title %></h3>
+
+    <p><strong>Date:</strong> <%= event.date %></p>
+
+    <% if event.image_url.present? %>
+      <img src="<%= event.image_url %>" width="200" />
+    <% end %>
+
+    <% vote = event.event_vote_count %>
+
+    <p>
+      👍 Upvotes: <%= vote&.upvotes || 0 %> |
+      👎 Downvotes: <%= vote&.downvotes || 0 %>
+    </p>
+
+    <%= button_to "Upvote", vote_event_path(event, vote_type: "upvote"), method: :post %>
+    <%= button_to "Downvote", vote_event_path(event, vote_type: "downvote"), method: :post %>
+
+  </div>
+<% end %>
