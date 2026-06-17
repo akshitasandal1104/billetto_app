@@ -45,6 +45,9 @@ gem 'rails_event_store'
 # HTTP calls
 gem 'faraday'
 
+# Authentication
+gem 'clerk-sdk-ruby', require: 'clerk'
+
 # Testing
 gem 'rspec-rails'
 

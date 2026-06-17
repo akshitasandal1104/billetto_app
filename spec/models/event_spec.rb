@@ -1,3 +1,5 @@
+require 'rails_helper'
+
 RSpec.describe Event, type: :model do
   it "is invalid without title" do
     event = Event.new(title: nil)
